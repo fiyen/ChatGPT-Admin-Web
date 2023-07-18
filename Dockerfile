@@ -1,5 +1,5 @@
 # 使用一个基于Node.js的镜像作为基础
-FROM node:16.14-alpine
+FROM node:18-alpine
 
 # 设置工作目录
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install -g pnpm
 RUN pnpm install
 
 # build
-# RUN pnpm build
+RUN pnpm build
 
 # 将项目文件复制到工作目录
 
