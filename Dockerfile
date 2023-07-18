@@ -13,11 +13,11 @@ RUN npm install -g pnpm
 # 安装项目依赖项
 RUN pnpm install
 
-# build
-RUN pnpm build
-
 # 将项目文件复制到工作目录
 COPY . .
+
+# build
+RUN pnpm build
 
 # 暴露应用程序所使用的端口（如果适用）
 EXPOSE 3000
