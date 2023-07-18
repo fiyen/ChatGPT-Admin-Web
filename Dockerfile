@@ -2,10 +2,9 @@
 FROM node:16.14-alpine
 
 # 设置工作目录
-WORKDIR /app
+WORKDIR /
 
 # 将 package.json 和 pnpm-lock.yaml 复制到工作目录
-COPY package.json pnpm-workspace.yaml tsconfig.json turbo.json ./
 
 # 安装pnpm
 RUN npm install -g pnpm
@@ -17,7 +16,6 @@ RUN pnpm install
 RUN pnpm build
 
 # 将项目文件复制到工作目录
-COPY . .
 
 # 暴露应用程序所使用的端口（如果适用）
 EXPOSE 3000
