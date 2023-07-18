@@ -5,7 +5,7 @@ FROM node:16.14-alpine
 WORKDIR /app
 
 # 将 package.json 和 pnpm-lock.yaml 复制到工作目录
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json turbo.json ./
 
 # 安装pnpm
 RUN npm install -g pnpm
