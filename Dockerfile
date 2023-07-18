@@ -13,6 +13,9 @@ RUN npm install -g pnpm
 # 安装项目依赖项
 RUN pnpm install
 
+# build
+RUN pnpm build
+
 # 将项目文件复制到工作目录
 COPY . .
 
